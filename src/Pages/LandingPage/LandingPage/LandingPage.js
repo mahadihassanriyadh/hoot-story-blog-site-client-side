@@ -20,11 +20,6 @@ const LandingPage = () => {
         .then(res => res.json())
         .then(data => {
             setBlogs(data)
-            while(blogs === []){
-                continue
-            }
-            console.log(data)
-
         })
     }, [])
 
@@ -60,13 +55,13 @@ const LandingPage = () => {
             {/* ------------------------------- 
             ---------  Recent Blogs  ---------- 
             -------------------------------- */}
-            <RecentBlogs></RecentBlogs>
+            <RecentBlogs recentLongStories={recentLongStories} recentShortStories={recentShortStories} loadLongStories={loadLongStories} loadShortStories={loadShortStories}></RecentBlogs>
 
 
             {/* ------------------------------- 
             -----------  Old Blogs  ----------- 
             -------------------------------- */}
-            <OldBlogs></OldBlogs>
+            <OldBlogs oldLongStories={oldLongStories} oldShortStories={oldShortStories} loadLongStories={loadLongStories} loadShortStories={loadShortStories}></OldBlogs>
 
         </div>
     );
