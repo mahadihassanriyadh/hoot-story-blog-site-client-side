@@ -16,7 +16,7 @@ const LandingPage = () => {
 
     // to fetch data from database
     useEffect(()=>{
-        fetch('./data.json')
+        fetch('https://hoot-story-blog.herokuapp.com/blogs')
         .then(res => res.json())
         .then(data => {
             setBlogs(data)
