@@ -6,7 +6,7 @@ import blogIcon from '../../../images/blog-icon.svg'
 import './LandingPageHeader.css'
 
 
-const LandingPageHeader = ({toggleLongStories, toggleShortStories}) => {
+const LandingPageHeader = ({deleteAll, toggleLongStories, toggleShortStories, longStoriesLength, shortStoriesLength}) => {
     
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -18,9 +18,9 @@ const LandingPageHeader = ({toggleLongStories, toggleShortStories}) => {
                     Blog
                     </Typography>
                     <Typography component="div">
-                    <button style={{color: "#EE6352", backgroundColor: "transparent", border: '0 transparent', fontSize: "15px", fontFamily: "Ubuntu", marginLeft: "32px", cursor: "pointer"}}>Delete all</button>
+                    <button onClick={deleteAll} style={{color: "#EE6352", backgroundColor: "transparent", border: '0 transparent', fontSize: "15px", fontFamily: "Ubuntu", marginLeft: "32px", cursor: "pointer"}}>Delete all</button>
                     </Typography>
-                    <span style={{fontSize: "11px", fontFamily: "Ubuntu", marginLeft: "32px"}} className="num-bg"><span>25</span></span>
+                    <span style={{fontSize: "11px", fontFamily: "Ubuntu", marginLeft: "32px"}} className="num-bg"><span>{longStoriesLength}</span></span>
                     <Typography style={{fontSize: "15px", fontFamily: "Ubuntu"}} component="div">
                     Long stories
                     </Typography>
@@ -29,7 +29,7 @@ const LandingPageHeader = ({toggleLongStories, toggleShortStories}) => {
                         <span className="slider round"></span>
                     </label>
 
-                    <span style={{fontSize: "11px", fontFamily: "Ubuntu", marginLeft: "32px"}} className="num-bg"><span>2</span></span>
+                    <span style={{fontSize: "11px", fontFamily: "Ubuntu", marginLeft: "32px"}} className="num-bg"><span>{shortStoriesLength}</span></span>
                     <Typography style={{fontSize: "15px", fontFamily: "Ubuntu"}} component="div">
                     Short stories
                     </Typography>
